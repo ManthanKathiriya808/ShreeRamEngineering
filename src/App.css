@@ -1,0 +1,21 @@
+
+@import "tailwindcss";
+@font-face {
+  font-family: "AlbertusMTStd";
+  src: url("/src/assets/fonts/AlbertusMTStd.otf") format("opentype");
+ 
+}
+
+:root{
+    --blue:#0A93E0
+}
+
+.title-font{
+    font-family: "AlbertusMTStd", serif;
+    font-weight: 900;
+    
+}
+
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
