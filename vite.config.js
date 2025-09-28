@@ -35,10 +35,16 @@ export default defineConfig({
     include: ['react', 'react-dom', 'react-router']
   },
   
-  // Enable compression
+  // Enable compression and fix WebSocket issues
   server: {
     headers: {
       'Cache-Control': 'public, max-age=31536000'
+    },
+    hmr: {
+      port: 5173,
+    },
+    watch: {
+      usePolling: true,
     }
   }
 })
