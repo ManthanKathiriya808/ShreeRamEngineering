@@ -23,6 +23,4 @@ dist-ssr
 *.sln
 *.sw?
 
-# Large image files (temporarily exclude)
-public/sre/fabrication/rotary\ air\ lock/
-public/sre/PA\ Nozzles/
+# Large image files (temporarily exclude) - REMOVED TO ALLOW UPLOAD
