@@ -77,7 +77,7 @@ const ValveTypes = () => {
                 <LazyImage
                   src={valve.image}
                   alt={valve.name}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-60   object-cover "
                 />
                 <div className="p-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-[var(--blue)] transition-colors">

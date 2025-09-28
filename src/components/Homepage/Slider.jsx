@@ -8,24 +8,28 @@ import "swiper/css/pagination";
 
 const data = [
   {
-    img: "/slider/auto.jpg",
-    title: "Automotive",
+    img: "/slider/gas.jpg",
+    title: "Oil & Gas Industry",
   },
   {
-    img: "/slider/oil.jpg",
-    title: "Oil Field Equipment",
+    img: "/slider/water.jpg",
+    title: "Water & Wastewater Management",
   },
   {
-    img: "/slider/tools.jpg",
-    title: "Machine Tools",
+    img: "/slider/power.jpg",
+    title: "Power & Energy Sector",
   },
   {
-    img: "/slider/construction.jpg",
-    title: "Construction & Mining Equipment",
+    img: "/slider/pharma.jpg",
+    title: "Pharmaceutical & Chemical Industry",
   },
   {
-    img: "/slider/electric.jpg",
-    title: "Electric Power Generation Equipment",
+    img: "/slider/food.jpg",
+    title: "Food & Beverage Industry",
+  },
+  {
+    img: "/slider/mining.jpg",
+    title: "Mining & Metal Industry",
   },
 ];
 

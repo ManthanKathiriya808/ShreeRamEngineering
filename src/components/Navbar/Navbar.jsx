@@ -63,8 +63,7 @@ const Navbar = () => {
                   <Link to="/products/fabrication-items" className="block px-3 py-2 hover:bg-gray-100 rounded hover:text-[var(--blue)] transition-colors">Fabrication Items</Link>
                   <Link to="/products/pump-spares" className="block px-3 py-2 hover:bg-gray-100 rounded hover:text-[var(--blue)] transition-colors">Pump Spares</Link>
                   <Link to="/products/pa-nozzels" className="block px-3 py-2 hover:bg-gray-100 rounded hover:text-[var(--blue)] transition-colors">PA Nozzles</Link>
-                  <Link to="/products/fasteners-pipe" className="block px-3 py-2 hover:bg-gray-100 rounded hover:text-[var(--blue)] transition-colors">Fasteners & Pipe Fittings</Link>
-                </div>
+                 </div>
               </div>
             )}
           </div>
@@ -161,13 +160,7 @@ const Navbar = () => {
                   >
                     PA Nozzles
                   </Link>
-                  <Link 
-                    to="/products/fasteners-pipe" 
-                    className="block py-2 hover:text-[var(--blue)] transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Fasteners & Pipe Fittings
-                  </Link>
+              
                 </div>
               )}
             </div>

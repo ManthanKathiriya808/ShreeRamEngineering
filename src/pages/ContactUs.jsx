@@ -27,7 +27,7 @@ const ContactUs = () => {
     setSubmitStatus('');
 
     try {
-      // Using Formspree - Replace 'YOUR_FORM_ID' with your actual Formspree form ID
+   
       const response = await fetch('https://formspree.io/f/mkgqoyzj', {
         method: 'POST',
         headers: {
