@@ -77,9 +77,6 @@ const Slider = () => {
           delay: 3000,
           disableOnInteraction: false,
         }}
-        pagination={{
-          clickable: true,
-        }}
         breakpoints={{
           320: { slidesPerView: 1 },
           640: { slidesPerView: 2 },
