@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+import { Analytics } from '@vercel/analytics/react'
 
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router'
@@ -57,6 +57,7 @@ function App() {
           <Route  path='/products/diaphragm-valves'  element={<DiaphragmValves/>} />
         </Routes>
       </BrowserRouter>
+      <Analytics />
     </>
   )
 }
