@@ -74,9 +74,9 @@ const SwingCheckValves = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="animate-slide-in-left">
                 <LazyImage
-                  src="/sre/valves/actuator ball valve.jpg"
+                  src="/sre/valves/swing.jpg"
                   alt="Swing Check Valves"
-                  className="w-full h-96 object-cover rounded-lg shadow-xl"
+                  className="w-full lg:h-60 lg:p-5 object-cover rounded-lg shadow-xl"
                 />
               </div>
               <div className="animate-slide-in-right">

@@ -11,25 +11,25 @@ const BallValves = () => {
     {
       id: 'single-piece-screwed',
       name: 'Single Piece Screwed Reduce & Full Bore',
-      image: '/sre/valves/actuator ball valve.jpg',
+      image: '/sre/valves/ballValve1.jpg',
       description: 'High-quality single piece ball valves with screwed ends, available in both reduce and full bore configurations.'
     },
     {
       id: 'single-piece-flanged',
       name: 'Single Piece Flanged End Valves',
-      image: '/sre/valves/actuator offcentric butterfly valve.jpg',
+      image: '/sre/valves/ballValve2.jpg',
       description: 'Robust single piece flanged end ball valves designed for high-pressure applications.'
     },
     {
       id: 'three-piece-flanged',
       name: 'Three Piece Flanged End',
-      image: '/sre/valves/repairing safety valve.jpg',
+      image: '/sre/valves/ballValve3.jpg',
       description: 'Three-piece design flanged end ball valves offering easy maintenance and repair capabilities.'
     },
     {
       id: 'three-piece-screwed',
       name: 'Three Piece Screwed Valves',
-      image: '/sre/valves/actuator ball valve.jpg',
+      image: '/sre/valves/ballValve4.jpg',
       description: 'Three-piece screwed end ball valves with excellent sealing performance and durability.'
     }
   ];
@@ -200,7 +200,7 @@ const BallValves = () => {
                   <LazyImage
                     src={valve.image}
                     alt={valve.name}
-                    className="w-full h-48 object-cover rounded-lg mb-4"
+                    className="w-full object-cover rounded-lg mb-4"
                   />
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">
                     {valve.name}
@@ -223,7 +223,7 @@ const BallValves = () => {
                 <LazyImage
                   src={currentValve.image}
                   alt={currentValve.name}
-                  className="w-full h-96 object-cover rounded-lg shadow-xl mb-6"
+                  className="w-full lg:h-60 object-cover rounded-lg shadow-xl mb-6"
                 />
                 <h3 className="text-3xl font-bold text-gray-900 mb-4">
                   {currentValve.name}

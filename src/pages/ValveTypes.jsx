@@ -7,49 +7,49 @@ const ValveTypes = () => {
   const valveTypes = [
     { 
       name: 'Ball Valves', 
-      image: '/sre/valves/actuator ball valve.jpg',
+      image: '/sre/valves/ballValve1.jpg',
       link: '/products/ball-valves',
       description: 'High-performance ball valves for various industrial applications'
     },
     { 
       name: 'Plug Valves', 
-      image: '/sre/valves/actuator offcentric butterfly valve.jpg',
+      image: '/sre/valves/plug.jpg',
       link: '/products/plug-valves',
       description: 'Reliable plug valves for flow control applications'
     },
     { 
       name: 'Globe Valves', 
-      image: '/sre/valves/repairing safety valve.jpg',
+      image: '/sre/valves/globe.jpg',
       link: '/products/globe-valves',
       description: 'Precision globe valves for throttling and shut-off applications'
     },
     { 
       name: 'Swing Check Valves', 
-      image: '/sre/valves/actuator ball valve.jpg',
+      image: '/sre/valves/swing.jpg',
       link: '/products/swing-check-valves',
       description: 'Automatic swing check valves for preventing backflow'
     },
     { 
       name: 'Steam Valves', 
-      image: '/sre/valves/actuator offcentric butterfly valve.jpg',
+      image: '/sre/valves/stream.jpg',
       link: '/products/steam-valves',
       description: 'Specialized steam valves for high-temperature applications'
     },
     { 
       name: 'Strainer Valves', 
-      image: '/sre/valves/repairing safety valve.jpg',
+      image: '/sre/valves/strainer.jpg',
       link: '/products/strainer-valves',
       description: 'Strainer valves for filtering and protecting downstream equipment'
     },
     { 
       name: 'P.P. Valves & Fittings', 
-      image: '/sre/valves/actuator ball valve.jpg',
+      image: '/sre/valves/ppValve.jpg',
       link: '/products/pp-valves',
       description: 'Polypropylene valves and fittings for corrosive applications'
     },
     { 
       name: 'Diaphragm Valves', 
-      image: '/sre/valves/actuator offcentric butterfly valve.jpg',
+      image: '/sre/valves/diaphram.jpg',
       link: '/products/diaphragm-valves',
       description: 'Diaphragm valves for handling corrosive and abrasive fluids'
     }
@@ -77,7 +77,7 @@ const ValveTypes = () => {
                 <LazyImage
                   src={valve.image}
                   alt={valve.name}
-                  className="w-full h-60   object-cover "
+                  className="w-full p-4   object-cover "
                 />
                 <div className="p-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-[var(--blue)] transition-colors">

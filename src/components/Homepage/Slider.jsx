@@ -78,7 +78,7 @@ const Slider = () => {
         slidesPerView={3}
         loop={true}
         autoplay={{
-          delay: 3000,
+          delay: 1500,
           disableOnInteraction: false,
         }}
         breakpoints={{
