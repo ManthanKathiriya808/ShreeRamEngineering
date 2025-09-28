@@ -33,7 +33,7 @@ const Navbar = () => {
             effect="opacity"
           />
           <span className="text-sm sm:text-lg md:text-xl lg:text-2xl title-font text-[var(--blue)] font-bold leading-tight">
-            <span className=" sm:inline">SHREE RAM ENGINEERING</span>
+            <span className=" ">SHREE RAM ENGINEERING</span>
          
           </span>
         </Link>
