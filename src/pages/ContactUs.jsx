@@ -18,12 +18,42 @@ const ContactUs = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('');
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setIsSubmitting(true);
+    setSubmitStatus('');
+
+    try {
+      // Using Formspree - Replace 'YOUR_FORM_ID' with your actual Formspree form ID
+      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          _replyto: formData.email,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -186,11 +216,24 @@ const ContactUs = () => {
                         placeholder="Tell us about your requirements..."
                       />
                     </div>
+                    {/* Status Messages */}
+                    {submitStatus === 'success' && (
+                      <div className="p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+                        ✅ Thank you! Your message has been sent successfully. We'll get back to you soon.
+                      </div>
+                    )}
+                    {submitStatus === 'error' && (
+                      <div className="p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+                        ❌ Sorry, there was an error sending your message. Please try again or contact us directly.
+                      </div>
+                    )}
+
                     <button
                       type="submit"
-                      className="w-full bg-[var(--blue)] text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 hover:scale-105"
+                      disabled={isSubmitting}
+                      className="w-full bg-[var(--blue)] text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      Send Message
+                      {isSubmitting ? 'Sending...' : 'Send Message'}
                     </button>
                   </form>
                 </div>

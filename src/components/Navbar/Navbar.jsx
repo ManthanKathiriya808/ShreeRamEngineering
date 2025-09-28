@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav className="sticky top-0 left-0 w-full z-20 bg-white text-black">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
+        <Link to="/"lassName="flex items-center space-x-2">
           <LazyImage 
             src="/SRE LOGO.gif" 
             className="h-10 w-10" 
@@ -21,7 +21,7 @@ const Navbar = () => {
           <span className="text-2xl title-font text-[var(--blue)] ">
             SHREE RAM ENGINEERING
           </span>
-        </div>
+        </Link>
 
         {/* Menu */}
         <div className="hidden md:flex items-center space-x-8">
