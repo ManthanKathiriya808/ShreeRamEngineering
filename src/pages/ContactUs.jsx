@@ -45,8 +45,26 @@ const ContactUs = () => {
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', subject: '', message: '' });
+        
+        // Track successful form submission
+        if (window.gtag) {
+          window.gtag('event', 'contact_form_submit', {
+            event_category: 'engagement',
+            event_label: 'contact_form_success',
+            value: 1
+          });
+        }
       } else {
         setSubmitStatus('error');
+        
+        // Track failed form submission
+        if (window.gtag) {
+          window.gtag('event', 'contact_form_error', {
+            event_category: 'engagement',
+            event_label: 'contact_form_failed',
+            value: 0
+          });
+        }
       }
     } catch (error) {
       console.error('Error submitting form:', error);

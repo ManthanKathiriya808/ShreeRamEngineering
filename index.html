@@ -5,13 +5,64 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0A93E0" />
+    
+    <!-- Performance Optimizations -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://formspree.io">
+    
+    <!-- Critical CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <meta name="description" content="Leading manufacturer of industrial valves, engineering items, fabrication components, and pump spares. ISO 9001:2008 certified with state-of-the-art facilities in Bhavnagar, Gujarat." />
-    <meta name="keywords" content="industrial valves, engineering solutions, fabrication items, pump spares, ball valves, globe valves, check valves, Bhavnagar, Gujarat, India, ISO certified" />
+    
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="description" content="Leading manufacturer of industrial valves, engineering items, fabrication components, and pump spares. ISO 9001:2008 certified with state-of-the-art facilities in Bhavnagar, Gujarat. Fast delivery, quality assurance, expert support." />
+    <meta name="keywords" content="industrial valves, engineering solutions, fabrication items, pump spares, ball valves, globe valves, check valves, butterfly valves, gate valves, steam valves, diaphragm valves, strainer valves, PA nozzles, pump spares, Bhavnagar, Gujarat, India, ISO certified, manufacturing, engineering company" />
     <meta name="author" content="ShreeRam Engineering" />
-    <title>ShreeRam Engineering - Industrial Valves & Engineering Solutions</title>
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.srebyn.com" />
+    
+    <!-- Enhanced Title -->
+    <title>ShreeRam Engineering - Leading Industrial Valves Manufacturer | Bhavnagar, Gujarat</title>
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ShreeRam Engineering",
+      "alternateName": "SRE",
+      "url": "https://www.srebyn.com",
+      "logo": "https://www.srebyn.com/SRE LOGO.gif",
+      "description": "Leading manufacturer of industrial valves, engineering items, fabrication components, and pump spares. ISO 9001:2008 certified.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "185/A, G I D C, Chitra",
+        "addressLocality": "Bhavnagar",
+        "addressRegion": "Gujarat",
+        "postalCode": "364004",
+        "addressCountry": "IN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-9428009512",
+        "contactType": "customer service",
+        "areaServed": "IN",
+        "availableLanguage": ["English", "Hindi", "Gujarati"]
+      },
+      "sameAs": [
+        "https://www.srebyn.com"
+      ],
+      "foundingDate": "2010",
+      "numberOfEmployees": "50-100",
+      "industry": "Manufacturing",
+      "certification": "ISO 9001:2008"
+    }
+    </script>
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -26,9 +77,79 @@
     <meta property="twitter:title" content="ShreeRam Engineering - Industrial Valves & Engineering Solutions" />
     <meta property="twitter:description" content="Leading manufacturer of industrial valves, engineering items, fabrication components, and pump spares. ISO 9001:2008 certified with state-of-the-art facilities in Bhavnagar, Gujarat." />
     <meta property="twitter:image" content="/SRE LOGO.gif" />
+    
+    <!-- Google Analytics 4 - Replace GA_MEASUREMENT_ID with your actual ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+      
+      // Track contact form submissions
+      gtag('event', 'contact_form_view', {
+        event_category: 'engagement',
+        event_label: 'contact_page'
+      });
+    </script>
+    
+    <!-- Vercel Analytics (will be added by Vercel automatically) -->
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Performance Monitoring -->
+    <script>
+      // Core Web Vitals monitoring
+      function sendToAnalytics({name, delta, value, id}) {
+        gtag('event', name, {
+          event_category: 'Web Vitals',
+          event_label: id,
+          value: Math.round(name === 'CLS' ? delta * 1000 : delta),
+          non_interaction: true,
+        });
+      }
+      
+      // Monitor LCP
+      new PerformanceObserver((entryList) => {
+        for (const entry of entryList.getEntries()) {
+          sendToAnalytics({
+            name: 'LCP',
+            delta: entry.startTime,
+            value: entry.startTime,
+            id: entry.id,
+          });
+        }
+      }).observe({entryTypes: ['largest-contentful-paint']});
+      
+      // Monitor FID
+      new PerformanceObserver((entryList) => {
+        for (const entry of entryList.getEntries()) {
+          sendToAnalytics({
+            name: 'FID',
+            delta: entry.processingStart - entry.startTime,
+            value: entry.processingStart - entry.startTime,
+            id: entry.id,
+          });
+        }
+      }).observe({entryTypes: ['first-input']});
+      
+      // Monitor CLS
+      let clsValue = 0;
+      new PerformanceObserver((entryList) => {
+        for (const entry of entryList.getEntries()) {
+          if (!entry.hadRecentInput) {
+            clsValue += entry.value;
+            sendToAnalytics({
+              name: 'CLS',
+              delta: entry.value,
+              value: clsValue,
+              id: entry.id,
+            });
+          }
+        }
+      }).observe({entryTypes: ['layout-shift']});
+    </script>
   </body>
 </html>
